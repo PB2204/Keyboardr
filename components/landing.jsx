@@ -1,4 +1,4 @@
-import KeyboardImg from "../../assets/keyboard-cover.png";
+import KeyboardImg from "../assets/keyboard-cover.png";
 
 const LandingSection = () => {
   return (

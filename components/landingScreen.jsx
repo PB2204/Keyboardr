@@ -1,5 +1,5 @@
 import Image from "next/image";
-import KeyboardImg from "../../assets/keyboard.png";
+import KeyboardImg from "../assets/keyboard.png";
 
 const LandingSection = () => {
   return (
