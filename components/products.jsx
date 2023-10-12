@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { Rating } from "../rating";
-
-import Keyboard1Img from "../../assets/keyboard1.png";
-import Keyboard2Img from "../../assets/keyboard2.png";
-import Keyboard3Img from "../../assets/keyboard3.png";
-import Keyboard4Img from "../../assets/keyboard4.png";
+import { Rating } from "./rating";
+import Keyboard1Img from "../assets/keyboard1.png";
+import Keyboard2Img from "../assets/keyboard2.png";
+import Keyboard3Img from "../assets/keyboard3.png";
+import Keyboard4Img from "../assets/keyboard4.png";
 
 const products = [
   {
@@ -68,7 +67,10 @@ const ProductCard = ({ product }) => {
         />
       </div>
       <div className="p-4 flex-grow">
+        
+        <Link href={{pathname:`/products/${product.id}`, query:product}} legacyBehavior>
         <h3 className="text-lg font-semibold text-black">{product.name}</h3>
+        </Link>
         <div className="flex items-center mt-1 mb-2">
           <Rating value={product.rating} />
           <span className="ml-2 text-gray-500">
@@ -92,13 +94,8 @@ const Products = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div className="mt-8 flex justify-center">
-        <Link href="/products" legacyBehavior>
-          <a className="bg-black text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-900 transition-colors duration-300">
-            View All
-          </a>
-        </Link>
-      </div>
+      
+
     </div>
   );
 };

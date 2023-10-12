@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import { LandingSection } from "../components/landing";
-import Products from "../components/products";
+import ProductsComponent from "../components/products";
 import { Footer } from "../components/footer";
 import { Features } from "../components/features";
 
@@ -21,7 +22,14 @@ export default function Home() {
       </Head>
       <Navbar />
       <LandingSection />
-      <Products />
+      <ProductsComponent />
+      <div className="mt-8 flex justify-center">
+        <Link href="/products" legacyBehavior>
+          <a className="bg-black text-white py-2 px-4 rounded-lg shadow-md hover:bg-gray-900 transition-colors duration-300">
+            View All
+          </a>
+        </Link>
+      </div>
       <Features />
       <Footer />
     </>
